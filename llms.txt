@@ -1,0 +1,86 @@
+# getascraper/how-to-scrape-gotfriends
+
+> GotFriends Scraper is an Apify Actor that extracts structured tech job vacancy datasets from gotfriends.co.il (Israel's premier tech and startup recruitment platform) via its public SSR HTML layout. Requires Israeli proxies to bypass geographic firewall (geo-fence).
+> Built with TypeScript, Cheerio, Israeli proxy support. Free tier available.
+
+## Overview
+
+- GotFriends.co.il tech jobs scraper and Israeli startup recruitment data extraction API
+- Extracts: jobId, url, jobTitle, company (extracted descriptor), category, location, jobDescription, requirements, isHot, scrapedAt
+- Output formats: JSON, CSV, Excel, XML, RSS
+- Free tier: included (pay only for completed runs)
+
+## Key Pages
+
+- README: https://github.com/getascraper/how-to-scrape-gotfriends/blob/main/README.md
+- Apify Store: https://apify.com/devanshlive/gotfriends-scraper
+- Apify Console: https://console.apify.com/actors/devanshlive~gotfriends-scraper
+- Source Actor: https://github.com/getascraper/actorstack/tree/main/actors/gotfriends-scraper
+
+## How it works
+
+1. Send HTTP GET to gotfriends.co.il jobslobby category pages (static SSR, no JS required)
+2. Route requests through Apify Israel Proxy Group (country-IL) to bypass geo-fence
+3. Parse jobId from URL path (e.g. `74821` from `/jobslobby/software/74821/`)
+4. Extract company descriptor from title (GotFriends hides real brand names, uses phrases like "AI Startup")
+5. Parse primary location from Hebrew description text (Tel Aviv, Herzliya, Haifa, Ramat Gan)
+6. Detect hot or sponsored status from listing card metadata
+7. Push one cleaned row per job to the Apify dataset
+
+## Target site technical quirks
+
+- Static SSR HTML, no JS rendering
+- Strict geographic firewall (geo-fence) blocks non-Israeli IPs
+- Datacenter IPs (e.g. AWS us-east-1) get immediate timeout
+- Israeli residential or datacenter proxies work via country-IL proxy group
+- Real company names hidden, replaced with category descriptors
+- Hebrew language throughout
+
+## API Usage
+
+- Node.js SDK: https://docs.apify.com/api/client/js/
+- REST API: https://docs.apify.com/api/v2
+- MCP server: https://mcp.apify.com/
+
+## Supported target URLs
+
+- https://www.gotfriends.co.il/jobslobby/software/ (category lobby)
+- https://www.gotfriends.co.il/jobslobby/ai/ (AI category)
+- https://www.gotfriends.co.il/jobslobby/security/ (security category)
+- https://www.gotfriends.co.il/jobslobby/qa/ (QA category)
+- https://www.gotfriends.co.il/jobslobby/devops/ (DevOps category)
+- https://www.gotfriends.co.il/jobslobby/data/ (data science category)
+- https://www.gotfriends.co.il/jobslobby/mobile/ (mobile development)
+- https://www.gotfriends.co.il/jobslobby/graduates/ (Mamram / 8200 military intelligence veterans)
+- https://www.gotfriends.co.il/jobslobby/{category}/{jobId}/ (direct vacancy)
+
+## Pricing
+
+- Free tier: included
+- Paid: $1.80 per 1,000 scraped jobs
+
+## Output schema (highlights)
+
+- jobId: numeric ID from listing path
+- url: direct vacancy URL
+- jobTitle: Hebrew job title
+- company: extracted descriptive text (e.g. "סטארט-אפ בתחום ה-AI" = "AI Startup Company")
+- category: software | ai | security | qa | devops | data | mobile | graduates | etc.
+- location: primary Hebrew city or hub
+- jobDescription: core job description
+- requirements: specific tech requirements
+- isHot: boolean trending or sponsored flag
+- scrapedAt: ISO 8601 timestamp
+
+## Use cases
+
+- Source elite tech candidates from Tel Aviv, Herzliya, Ramat Gan startup ecosystem
+- Track hiring trends across Israeli AI, cyber security, and DevOps sectors
+- Generate B2B leads targeting Israeli startups with active engineering hiring
+- Build candidate pipelines for specific tech stacks (React, Golang, Python, Kubernetes)
+- Benchmark Israeli tech compensation by category and seniority
+
+## Support
+
+- GitHub Issues: https://github.com/getascraper/how-to-scrape-gotfriends/issues
+- Apify Console: https://console.apify.com/actors/devanshlive~gotfriends-scraper/issues

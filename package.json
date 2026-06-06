@@ -1,0 +1,41 @@
+{
+  "name": "how-to-scrape-gotfriends",
+  "version": "1.0.0",
+  "description": "GotFriends.co.il scraper and Israeli tech startup recruitment data extraction. Pull job titles, category descriptors, and location hubs from gotfriends.co.il with Israeli proxy support. Free tier available.",
+  "main": "src/main.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "keywords": [
+    "gotfriends",
+    "scraper",
+    "apify",
+    "apify-actor",
+    "israel",
+    "jobs",
+    "tech",
+    "startup",
+    "recruitment",
+    "data-extraction",
+    "hebrew",
+    "tel-aviv",
+    "israeli-proxy",
+    "static-html",
+    "cheerio"
+  ],
+  "author": "devansh-365",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/getascraper/how-to-scrape-gotfriends"
+  },
+  "homepage": "https://apify.com/devanshlive/gotfriends-scraper",
+  "bugs": {
+    "url": "https://github.com/getascraper/how-to-scrape-gotfriends/issues"
+  },
+  "dependencies": {
+    "apify-client": "^2.9.0",
+    "dotenv": "^16.4.0"
+  }
+}
