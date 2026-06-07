@@ -12,6 +12,8 @@ Whether you are a recruiter sourcing elite tech candidates in Tel Aviv or Herzli
 
 </div>
 
+![GotFriends Scraper Apify Actor hero screenshot](docs/hero-screenshot.png)
+
 ---
 
 ## What is GotFriends Scraper?
