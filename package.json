@@ -30,7 +30,7 @@
     "type": "git",
     "url": "https://github.com/getascraper/how-to-scrape-gotfriends"
   },
-  "homepage": "https://apify.com/devanshlive/gotfriends-scraper",
+  "homepage": "https://apify.com/getascraper/gotfriends-scraper",
   "bugs": {
     "url": "https://github.com/getascraper/how-to-scrape-gotfriends/issues"
   },

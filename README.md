@@ -2,7 +2,7 @@
 
 # GotFriends Scraper | Israel Tech Startup Jobs | Apify Actor
 
-[![Apify Actor](https://img.shields.io/badge/Apify-Actor-ff6b35?style=for-the-badge&logo=apify&logoColor=white)](https://apify.com/devanshlive/gotfriends-scraper) [![Node.js](https://img.shields.io/badge/Node.js-18%2B-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/) [![TypeScript](https://img.shields.io/badge/TypeScript-Strict-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/) [![Free Tier](https://img.shields.io/badge/Free-Tier%20Included-blue?style=for-the-badge)](https://apify.com/devanshlive/gotfriends-scraper) [![Cheerio](https://img.shields.io/badge/Cheerio-Static%20HTML-ff6b35?style=for-the-badge)](https://cheerio.js.org/)
+[![Apify Actor](https://img.shields.io/badge/Apify-Actor-ff6b35?style=for-the-badge&logo=apify&logoColor=white)](https://apify.com/getascraper/gotfriends-scraper) [![Node.js](https://img.shields.io/badge/Node.js-18%2B-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/) [![TypeScript](https://img.shields.io/badge/TypeScript-Strict-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/) [![Free Tier](https://img.shields.io/badge/Free-Tier%20Included-blue?style=for-the-badge)](https://apify.com/getascraper/gotfriends-scraper) [![Cheerio](https://img.shields.io/badge/Cheerio-Static%20HTML-ff6b35?style=for-the-badge)](https://cheerio.js.org/)
 
 **GotFriends scraper and Israeli startup recruitment data extraction API.** Pull tech job titles, startup category descriptors, location hubs, full Hebrew descriptions, requirements, and trending indicators from gotfriends.co.il with this Apify Actor. Built on lightweight Cheerio code with Israel proxy support. Free tier included.
 
@@ -43,7 +43,7 @@ import { ApifyClient } from 'apify-client';
 
 const client = new ApifyClient({ token: process.env.APIFY_TOKEN });
 
-const run = await client.actor('devanshlive/gotfriends-scraper').call({
+const run = await client.actor('getascraper/gotfriends-scraper').call({
   category: 'software',
   location: 'tel-aviv',
   searchQuery: 'React',
@@ -56,7 +56,7 @@ console.log(items);
 
 ## How to use
 
-1. Open the Actor in [Apify Console](https://apify.com/devanshlive/gotfriends-scraper)
+1. Open the Actor in [Apify Console](https://apify.com/getascraper/gotfriends-scraper)
 2. Set **Tech Category** to filter by lane (`software`, `ai`, `security`, `qa`, `devops`, `data`, `mobile`, or `graduates`)
 3. Set **Location Filter** to a Hebrew name or English slug (e.g. `tel-aviv`, `herzliya`, `haifa`)
 4. Optionally set **Search Query** for a tech stack keyword like `React` or `Golang`
@@ -153,4 +153,4 @@ The scraper accesses only the public, unauthenticated job listings of the GotFri
 ## Support
 
 - GitHub Issues: https://github.com/getascraper/how-to-scrape-gotfriends/issues
-- Apify Console: https://console.apify.com/actors/devanshlive~gotfriends-scraper/issues
+- Apify Console: https://console.apify.com/actors/getascraper~gotfriends-scraper/issues

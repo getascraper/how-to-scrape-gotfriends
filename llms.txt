@@ -13,8 +13,8 @@
 ## Key Pages
 
 - README: https://github.com/getascraper/how-to-scrape-gotfriends/blob/main/README.md
-- Apify Store: https://apify.com/devanshlive/gotfriends-scraper
-- Apify Console: https://console.apify.com/actors/devanshlive~gotfriends-scraper
+- Apify Store: https://apify.com/getascraper/gotfriends-scraper
+- Apify Console: https://console.apify.com/actors/getascraper~gotfriends-scraper
 - Source Actor: https://github.com/getascraper/actorstack/tree/main/actors/gotfriends-scraper
 
 ## How it works
@@ -83,4 +83,4 @@
 ## Support
 
 - GitHub Issues: https://github.com/getascraper/how-to-scrape-gotfriends/issues
-- Apify Console: https://console.apify.com/actors/devanshlive~gotfriends-scraper/issues
+- Apify Console: https://console.apify.com/actors/getascraper~gotfriends-scraper/issues
